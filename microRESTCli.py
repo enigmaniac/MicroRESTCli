@@ -4,7 +4,11 @@ Copyright © 2018 Jean-Christophe Bos & HC² (www.hc2.fr)
 """
 
 from microWebCli import MicroWebCli
-from time        import gmtime, mktime
+try :
+    from time   import gmtime
+except :
+    from time   import localtime as gmtime # Correct error where gmtime doesn't exist in ESP32 module
+from time 		 import mktime
 
 class MicroRESTCli :
 
